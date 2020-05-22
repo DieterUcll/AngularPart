@@ -26,8 +26,9 @@ export class UserService {
   postUserToServer(user: User): Observable<User> {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json',
+        'Access-Control-Request-Method': 'POST',
+        'Access-Control-Request-Headers': 'Content-Type'
       })};
 
     const json = JSON.stringify(user);
