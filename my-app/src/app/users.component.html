@@ -2,23 +2,23 @@
 <h2>Users</h2>
 <ul>
   <li *ngFor="let user of users" (click)="onSelect(user)">
-    <span>{{user.userId}}</span> ->  {{user.status}}
+    <span>{{user.userId + " " + user.firstName + " " + user.lastName}}</span> ->  {{user.status}}
   </li>
 </ul>
 <div *ngIf="selectedUser">
   <h2>{{selectedUser.firstName + " " + selectedUser.lastName + "'s"}} details!</h2>
   <table>
     <tr>
-      <th>email</th>
       <th>first name</th>
       <th>last name</th>
       <th>gender</th>
+      <th>status</th>
     </tr>
     <tr>
-      <td><input [(ngModel)]="selectedUser.userId" placeholder="email"/></td>
       <td><input [(ngModel)]="selectedUser.firstName" placeholder="first name"/></td>
       <td><input [(ngModel)]="selectedUser.lastName" placeholder="last name"/></td>
       <td><input [(ngModel)]="selectedUser.gender" placeholder="gender"/></td>
+      <td><input [(ngModel)]="selectedUser.status" placeholder="status"/></td>
     </tr>
   </table>
 </div>

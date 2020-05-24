@@ -25,7 +25,7 @@ export class UsersComponent implements OnInit {
   // Call subscribe() to start listening for updates
   getUsers(): void {
     // polling
-    timer(0, 2500)
+    timer(0, 4000)
       .subscribe(() => {
         this.userService.getUsers()
           .subscribe(data => this.users = data);
@@ -33,7 +33,7 @@ export class UsersComponent implements OnInit {
   }
 
   postUserToServer(): void {
-    timer(0, 5000)
+    timer(0, 4000)
       .subscribe(() => {
         this.userService
           .postUserToServer(this.selectedUser)
@@ -44,7 +44,7 @@ export class UsersComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.getUsers();
     this.postUserToServer();
+    this.getUsers();
   }
 }
